@@ -1,0 +1,38 @@
+{
+  "manifest_version": "0.2",
+  "name": "scalable-broker-mcp",
+  "display_name": "Scalable Broker (read-only)",
+  "version": "0.1.0",
+  "description": "Read your Scalable Capital portfolio in Claude. Unofficial; not affiliated with or endorsed by Scalable Capital.",
+  "author": { "name": "Your Name" },
+  "license": "MIT",
+  "server": {
+    "type": "node",
+    "entry_point": "server/index.js",
+    "mcp_config": {
+      "command": "node",
+      "args": ["${__dirname}/server/index.js"],
+      "env": { "SCALABLE_CLI_PATH": "${user_config.sc_path}" }
+    }
+  },
+  "tools": [
+    { "name": "check_setup", "description": "Check the CLI is installed and logged in." },
+    { "name": "portfolio_overview", "description": "Total value, profit/loss, allocation." },
+    { "name": "holdings", "description": "Current holdings." },
+    { "name": "transactions", "description": "Recent transactions." },
+    { "name": "analytics", "description": "Performance breakdown." },
+    { "name": "watchlist", "description": "Watchlist (read-only)." },
+    { "name": "savings_plans", "description": "Savings plans (read-only)." },
+    { "name": "price_alerts", "description": "Active price alerts (read-only)." },
+    { "name": "search_security", "description": "Search for an instrument." },
+    { "name": "security_news", "description": "News for an instrument by ISIN." }
+  ],
+  "user_config": {
+    "sc_path": {
+      "type": "string",
+      "title": "Path to the Scalable CLI (optional)",
+      "description": "Leave blank if `sc` is already on your PATH. Otherwise enter the full path to the `sc` binary.",
+      "required": false
+    }
+  }
+}
