@@ -4,7 +4,10 @@
   "display_name": "Scalable Capital (read-only)",
   "version": "0.1.0",
   "description": "Read your Scalable Capital portfolio in Claude. Unofficial; not affiliated with or endorsed by Scalable Capital.",
-  "author": { "name": "Your Name" },
+  "author": {
+    "name": "Mohak Gemini",
+    "url": "https://github.com/mohakgemini"
+  },
   "license": "MIT",
   "server": {
     "type": "node",
